@@ -7,10 +7,6 @@ pattern niceties. This is a monorepo which mimics the patterns laid out by the [
 
 The `core` package has all the base functionality and utilizes `@preact/signals-core`.
 
-## `@dpsignal/preact`
-
-The `preact` package adds a Preact specific hook and otherwise utilizes `@preact/signals` and exports key functionality from `@dpsignal/core`.
-
 ## `@dpsignal/react`
 
 The `react` package adds a React specific hook and otherwise utilizes `@preact/signals-react` and exports key functionality from `@dpsignal/core`.
