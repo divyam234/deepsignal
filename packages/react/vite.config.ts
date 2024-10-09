@@ -25,7 +25,7 @@ export default defineConfig({
       fileName: format => `lib.${format}.js`,
     },
     rollupOptions: {
-      external: ["@preact/signals-react", "react", "@deepsignal/core"],
+      external: ["@preact/signals-react", "react", "@dpsignal/core"],
     },
   },
 });

@@ -3,7 +3,7 @@ import { describe, it, expect } from "vitest";
 
 import { deepSignal, DeepSignal } from "./core";
 
-describe("@deepsignal/core", () => {
+describe("@dpsignal/core", () => {
   it("turns string properties into Signals", () => {
     const testStore = deepSignal({
       hello: "world",

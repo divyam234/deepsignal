@@ -1,4 +1,4 @@
-# 📶 @deepsignal/react
+# 📶 @dpsignal/react
 
 This library is meant to expand on Preact's new `Signal` primitive to make it a viable state management solution at the scale of a full
 state management system by wrapping the built in primitive with a new `DeepSignal` model. This package is intended for use with React 
@@ -8,16 +8,16 @@ applications only.
 
 ```sh
 # npm
-npm i @deepsignal/react @preact/signals-react
+npm i @dpsignal/react @preact/signals-react
 # yarn
-yarn add @deepsignal/react @preact/signals-react
+yarn add @dpsignal/react @preact/signals-react
 # pnpm
-pnpm add @deepsignal/react @preact/signals-react
+pnpm add @dpsignal/react @preact/signals-react
 ```
 
 This package also requires `@preact/signals-react` as peer dependencies, as well as `react` itself (although the commands above assume you have `react` already installed).
 
-## Why use `@deepsignal/react`?
+## Why use `@dpsignal/react`?
 
 In a current React application you would be easily tempted to use a state management solution from the React ecosystem which relies
 on the VDOM. If you use a library like this then then your application wide state updates could be causing full VDOM rerenders. Signals
@@ -34,7 +34,7 @@ of the store gets reassigned.
 So a simple example like this
 
 ```ts
-import { deepSignal } from "@deepsignal/react";
+import { deepSignal } from "@dpsignal/react";
 
 const userStore = deepSignal({
   name: {
@@ -112,7 +112,7 @@ By utilizing `useDeepSignal` you can get a local state DX that's very similar to
 advantages of signals.
 
 ```tsx
-import { useDeepSignal } from "@deepsignal/react";
+import { useDeepSignal } from "@dpsignal/react";
 
 const UserRegistrationForm = () => {
   const user = useDeepSignal(() => ({
@@ -159,7 +159,7 @@ const UserRegistrationForm = () => {
 The API for `deepStore` and `useDeepStore` will handle dynamic typing for arbitrary input! It will also help you avoid a case like this
 
 ```ts
-import { deepSignal } from "@deepsignal/react";
+import { deepSignal } from "@dpsignal/react";
 
 const userStore = deepSignal({
   name: {
@@ -178,7 +178,7 @@ userStore.value.email = "another@email.com"
 ### Zustand style method actions
 
 When I look to Zustand for the API it provides, it seems like a lot of their API (as much as I admire it) is based around supporting the
-functional context. But the output of `@deepsignal/react` is very openly dynamic and writing to it inside or outside of a component 
+functional context. But the output of `@dpsignal/react` is very openly dynamic and writing to it inside or outside of a component 
 ends up being the same. So you can take Zustand's basic example...
 
 ```ts
@@ -191,10 +191,10 @@ export const useBearStore = create((set) => ({
 }))
 ```
 
-...and create an effectively equivalent version with `@deepsignal/react` like this...
+...and create an effectively equivalent version with `@dpsignal/react` like this...
 
 ```ts
-import { deepSignal } from "@deepsignal/react";
+import { deepSignal } from "@dpsignal/react";
 
 export const bearStore = {
   data: deepSignal({
@@ -216,7 +216,7 @@ getter will properly subscribe to each underlying signal. So if you wanted to ma
 just need to call `effect` from `@preact/signals-react` and call `DeepSignal.value`
 
 ```ts
-import { deepSignal } from "@deepsignal/react";
+import { deepSignal } from "@dpsignal/react";
 import { effect } from "@preact/signals";
 
 type UserStore = {
@@ -251,7 +251,7 @@ effect(() => localStorage.setItem("USER_STORE_KEY", JSON.stringify(userStore.val
 This would also work for any level of the `DeepSignal`.
 
 ```ts
-import { deepSignal } from "@deepsignal/react";
+import { deepSignal } from "@dpsignal/react";
 import { effect } from "@preact/signals-react";
 
 type UserNameStore = {
@@ -282,7 +282,7 @@ issue and I will address the particular ask.
 New in 4.0.0, you can now have DeepSignals that represent modifiable data structures. If you wanted to create a DeepSignal as a record, it could be modified using the following example.
 
 ```tsx
-import { DeepSignalType, useDeepSignal } from "@deepsignal/react";
+import { DeepSignalType, useDeepSignal } from "@dpsignal/react";
 import { memo } from "react";
 
 export const TodoList = () => {

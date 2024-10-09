@@ -5,7 +5,7 @@ import { it, expect, describe } from "vitest";
 
 import { deepSignal, useDeepSignal } from "./react";
 
-describe("@deepsignal/react", () => {
+describe("@dpsignal/react", () => {
   it("rerenders if inner Signal is updated but the DeepSignal is subscribed to", () => {
     let renderCount = -1;
     const deepSignalInstance = deepSignal({ inner: { count: 0 } });
