@@ -1,7 +1,7 @@
 {
   "name": "@dpsignal/react",
   "private": false,
-  "version": "5.0.0",
+  "version": "5.0.1",
   "type": "module",
   "files": [
     "dist"
@@ -24,7 +24,7 @@
     "@dpsignal/core": "workspace:^"
   },
   "peerDependencies": {
-    "@preact/signals-react": ">=18"
+    "@preact/signals-react": ">=2"
   },
   "devDependencies": {
     "@preact/signals-react": "^2.2.0",
