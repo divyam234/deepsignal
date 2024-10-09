@@ -1,50 +1,44 @@
 {
-  "name": "deepsignal",
+  "name": "dsignal",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "build": "npm run build --workspaces",
-    "test": "npm run test --workspaces",
-    "test-core": "npm run test --workspace=@deepsignal/core",
-    "test-preact": "npm run test --workspace=@deepsignal/preact",
-    "test-react": "npm run test --workspace=@deepsignal/react",
-    "publish-all": "npx tsx ./scripts/publish-all.ts",
-    "version-bump": "npx tsx ./scripts/version-bump.ts"
+    "build": "pnpm --filter \"@dpsignal/*\" run build",
+    "test": "pnpm --filter \"@dpsignal/*\" run test",
+    "test-core": "pnpm --filter \"@dpsignal/core\" run test",
+    "test-react": "pnpm  --filter \"@dpsignal/react\" run test",
+    "version": "changeset version",
+    "release": "changeset publish",
+    "update": "pnpm up -r --latest"
   },
   "private": true,
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
-    "@commitlint/format": "^17.0.0",
-    "@types/semver": "^7.5.6",
-    "@typescript-eslint/eslint-plugin": "^5.38.1",
-    "@typescript-eslint/parser": "^5.38.1",
-    "concurrently": "^7.4.0",
-    "conventional-changelog-atom": "^2.0.8",
-    "eslint": "^8.24.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.6.2",
-    "semver": "^7.6.0",
-    "tsx": "^4.7.0",
-    "typescript": "~4.8.2",
-    "zx": "^7.2.3"
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/format": "^19.5.0",
+    "@changesets/cli": "^2.27.5",
+    "@types/semver": "^7.5.8",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "@typescript-eslint/parser": "^8.8.1",
+    "concurrently": "^9.0.1",
+    "conventional-changelog-atom": "^5.0.0",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "semver": "^7.6.3",
+    "tsx": "^4.19.1",
+    "typescript": "~5.6.3",
+    "zx": "^8.1.9"
   },
   "lint-staged": {
     "./**/*.{ts,tsx}": "npx eslint"
   },
-  "workspaces": [
-    "packages/*"
-  ],
-  "engines": {
-    "node": "18.x.x",
-    "npm": "9.x.x"
-  },
   "engineStrict": true,
-  "homepage": "https://github.com/EthanStandel/deepsignal#readme",
-  "repository": "https://github.com/EthanStandel/deepsignal"
+  "homepage": "https://github.com/divyam234/deepsignal#readme",
+  "repository": "https://github.com/divyam234/deepsignal"
 }

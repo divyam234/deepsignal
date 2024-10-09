@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { deepSignal, DeepState } from "@deepsignal/core";
+import { deepSignal, type DeepState } from "@dpsignal/core";
 import "@preact/signals-react";
 
 export const useDeepSignal = <T extends DeepState>(initial: T | (() => T)) =>
@@ -9,4 +9,4 @@ export const useDeepSignal = <T extends DeepState>(initial: T | (() => T)) =>
     []
   );
 
-export * from "@deepsignal/core";
+export * from "@dpsignal/core";
